@@ -1,0 +1,63 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+void listarcola(queue<string> colaaux){
+    if (colaaux.empty()){
+        cout<<"lacolaesta vacia"<<endl;
+        return;
+    }
+    while (!colaaux.empty())
+    {
+        cout<<"elementos: "<<colaaux.front()<<endl;
+
+        colaaux.pop();
+    }
+    
+}
+
+
+int main(){
+    queue<string> cola;
+    int opc=0;
+    string elemento="";
+
+    do{
+            cout<<" 1 Añadir Elemento a la pila"<<endl;
+                cout<<" 2 Quitar Elemento a la cola"<<endl;
+                cout<<" 3 listar Elemento a la cola"<<endl;
+                cout<<" 4 mostar elemento en la cima de la cola"<<endl;
+                cout<<" 5 Salir"<<endl<<endl;
+                cin>>opc;
+
+                switch (opc)
+                {
+                case 1:
+                    cin>>elemento;
+                    cola.push(elemento);
+                    break;
+                
+                case 2:
+                    cola.pop();
+
+                    break;
+                case 3:
+                    listarcola(cola);
+
+                    break;
+                case 4:
+                    cout<<"elprimer elemento es: "<<cola.front()<<endl<<endl;
+
+                    break;
+                case 5:
+
+
+                    break;
+                default:
+                    cout<<"ingrese una opcion valida"<<endl<<endl;
+                    break;
+                }
+    }while (opc!=5);
+    return 0;
+    
+}
